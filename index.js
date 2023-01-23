@@ -1,11 +1,11 @@
 //rick smith,morty smith,summer smith, beth smith, jerry smith
 const url = 'https://rickandmortyapi.com/api/character/'
-const rickSanchez = createEl('rick-sanchez');
-const mortySmith = createEl('morty-smith');
-const bethSmith = createEl('beth-smith');
-const jerrySmith = createEl('jerry-smith');
+const rickSanchez = el('rick');
+const mortySmith = el('morty');
+const bethSmith = el('beth');
+const jerrySmith = el('jerry');
 
-document.body.appendChild(rickSanchez);
+
 
 fetch(url)
 .then(resp=>resp.json())
@@ -13,12 +13,27 @@ fetch(url)
 
 function ricknmorty(data){
     console.log(data);
-    rickSanchez.src = data.image;
+    rick();
+    morty();
+    beth();
+    jerry();
 };
 
 
+function rick(data){};
 
 
-function createEl(id){
+function morty(data){};
+
+
+function beth(data){};
+
+
+function jerry(data){};
+
+
+
+
+function el(id){
     return document.createElement(id);
 };
