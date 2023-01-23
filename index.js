@@ -22,11 +22,16 @@ fetch(url)
 
 function ricknmorty(data){
     console.log(data);
+
+
     rickImage.src = data.results[0].image;
-    mortyImage.src = data.results[1].image
-    summerImage.src = data.results[2].image
-    bethImage.src = data.results[3].image
-    jerryImage.src = data.results[4].image
+    mortyImage.src = data.results[1].image;
+    summerImage.src = data.results[2].image;
+    bethImage.src = data.results[3].image;
+    jerryImage.src = data.results[4].image;
+
+
+    el('rick-article').innerText = data.results[0];
 
 
 
