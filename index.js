@@ -2,8 +2,17 @@
 const url = 'https://rickandmortyapi.com/api/character/'
 const rickSanchez = el('rick');
 const mortySmith = el('morty');
+const summerSmith = el('summer');
 const bethSmith = el('beth');
 const jerrySmith = el('jerry');
+
+
+const rickImage = el('rick-image');
+const mortyImage = el('morty-image');
+const summerImage = el('summer-image');
+const bethImage = el('beth-image');
+const jerryImage = el('jerry-image');
+
 
 
 
@@ -13,8 +22,17 @@ fetch(url)
 
 function ricknmorty(data){
     console.log(data);
+    rickImage.src = data.results[0].image;
+    mortyImage.src = data.results[1].image
+    summerImage.src = data.results[2].image
+    bethImage.src = data.results[3].image
+    jerryImage.src = data.results[4].image
+
+
+
     rick();
     morty();
+    summer();
     beth();
     jerry();
 };
@@ -26,6 +44,9 @@ function rick(data){};
 function morty(data){};
 
 
+function summer(){};
+
+
 function beth(data){};
 
 
@@ -35,5 +56,5 @@ function jerry(data){};
 
 
 function el(id){
-    return document.createElement(id);
+    return document.getElementById(id);
 };
