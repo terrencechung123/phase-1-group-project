@@ -20,20 +20,26 @@ fetch(url)
 .then(resp=>resp.json())
 .then(ricknmorty);
 
-function ricknmorty(data){
-    console.log(data);
+function ricknmorty(characters){
+    console.log(characters);
 
 
-    rickImage.src = data.results[0].image;
-    mortyImage.src = data.results[1].image;
-    summerImage.src = data.results[2].image;
-    bethImage.src = data.results[3].image;
-    jerryImage.src = data.results[4].image;
+    rickImage.src = characters.results[0].image;
+    mortyImage.src = characters.results[1].image;
+    summerImage.src = characters.results[2].image;
+    bethImage.src = characters.results[3].image;
+    jerryImage.src = characters.results[4].image;
 
 
-    el('rick-article').innerText = data.results[0];
+    el('rick-article').textContent = JSON.stringify(characters.results[0])
+    el('morty-article').textContent = JSON.stringify(characters.results[1])
+    el('summer-article').textContent = JSON.stringify(characters.results[2])
+    el('beth-article').textContent = JSON.stringify(characters.results[3])
+    el('jerry-article').textContent = JSON.stringify(characters.results[4])
 
 
+
+    el('rick-article').textContent 
 
     rick();
     morty();
@@ -43,7 +49,9 @@ function ricknmorty(data){
 };
 
 
-function rick(data){};
+function rick(data){
+    
+};
 
 
 function morty(data){};
