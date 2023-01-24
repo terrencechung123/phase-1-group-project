@@ -2,7 +2,7 @@ const url = "https://rickandmortyapi.com/api/character/";
 
 const cardsContainer = document.getElementById("card-container");
 
- addEventListebers
+
 cardsContainer.className = 'container'
 // addEventListener(`mouseenter`, addMouseHover)
 
@@ -36,7 +36,7 @@ fetch(url)
       // create place of origin element
       const originElement = document.createElement("p");
       originElement.textContent = `Place of origin: ${character.origin.name}`;
-
+    imageElement.setAttribute('class', 'image-class')
     //
 imageElement.addEventListener(`mouseenter`, () => { console.log(`mouse enter`)});
 imageElement.addEventListener(`mouseleave`, () => {console.log(`mouse leave`)})
