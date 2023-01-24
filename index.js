@@ -2,8 +2,20 @@ const url = "https://rickandmortyapi.com/api/character/";
 
 const cardsContainer = document.getElementById("card-container");
 
+ addEventListebers
 cardsContainer.className = 'container'
 // addEventListener(`mouseenter`, addMouseHover)
+
+//click title will make an alert that says banana
+
+const titleAlert = document.getElementsByTagName('h1');
+titleAlert[0].addEventListener('click',(banana)=>window.alert('banana!'));
+
+cardsContainer.className = "container";
+
+
+
+
 
 fetch(url)
   .then((resp) => resp.json())
@@ -22,13 +34,30 @@ fetch(url)
       // create place of origin element
       const originElement = document.createElement("p");
       originElement.textContent = `Place of origin: ${character.origin.name}`;
+
     //
 imageElement.addEventListener(`mouseenter`, () => { console.log(`mouse enter`)});
 imageElement.addEventListener(`mouseleave`, () => {console.log(`mouse leave`)})
 
       card.className = 'container'
+
+      // create species detail
+      const speciesElement = document.createElement("p");
+      speciesElement.textContent = `Species: ${character.species}`;
+      //create status detail
+      const statusElement = document.createElement("p");
+      statusElement.textContent = `Status: ${character.status}`;
+
+      card.className = "container";
+
       cardsContainer.append(card);
-      card.append(nameElement, imageElement, originElement);
+      card.append(
+        nameElement,
+        imageElement,
+        originElement,
+        speciesElement,
+        statusElement,
+      );
     });
   });
 
