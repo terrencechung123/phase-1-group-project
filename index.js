@@ -2,7 +2,15 @@ const url = "https://rickandmortyapi.com/api/character/";
 
 const cardsContainer = document.getElementById("card-container");
 
+//click title will make an alert that says banana
+
+const titleAlert = document.getElementsByTagName('h1');
+titleAlert[0].addEventListener('click',(banana)=>window.alert('banana!'));
+
 cardsContainer.className = "container";
+
+
+
 
 fetch(url)
   .then((resp) => resp.json())
