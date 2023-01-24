@@ -2,6 +2,9 @@ const url = "https://rickandmortyapi.com/api/character/";
 
 const cardsContainer = document.getElementById("card-container");
 
+cardsContainer.className = 'container'
+
+
 fetch(url)
   .then((resp) => resp.json())
   .then((data) => {
@@ -19,7 +22,8 @@ fetch(url)
       // create place of origin element
       const originElement = document.createElement("p");
       originElement.textContent = `Place of origin: ${character.origin.name}`;
-
+    
+      card.className = 'container'
       cardsContainer.append(card);
       card.append(nameElement, imageElement, originElement);
     });
