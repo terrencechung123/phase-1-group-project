@@ -1,4 +1,5 @@
 const url = "https://rickandmortyapi.com/api/character/";
+// a comment
 
 const cardsContainer = document.getElementById("card-container");
 
