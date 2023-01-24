@@ -2,7 +2,7 @@ const url = "https://rickandmortyapi.com/api/character/";
 
 const cardsContainer = document.getElementById("card-container");
 
- 
+
 cardsContainer.className = 'container'
 
 
@@ -37,6 +37,12 @@ fetch(url)
       const originElement = document.createElement("p");
       originElement.textContent = `Place of origin: ${character.origin.name}`;
 
+    imageElement.setAttribute('class', 'image-class')
+    //
+imageElement.addEventListener(`mouseenter`, () => { console.log(`mouse enter`)});
+imageElement.addEventListener(`mouseleave`, () => {console.log(`mouse leave`)})
+
+
       imageElement.addEventListener(`mouseenter`, (e) => {
         
         imageElement.style.border = `12px ridge limegreen`
@@ -45,6 +51,7 @@ fetch(url)
       imageElement.addEventListener(`mouseleave`, () => {
         imageElement.style.border = `none`
       })
+
 
       card.className = 'container'
 
