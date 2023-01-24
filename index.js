@@ -18,13 +18,15 @@ fetch(url)
       // create and populate image element
       const imageElement = document.createElement("img");
       imageElement.src = character.image;
+      imageElement.alt = `Picture of ${character.name}`;
+      imageElement.id = "imageId";
       // create place of origin element
       const originElement = document.createElement("p");
       originElement.textContent = `Place of origin: ${character.origin.name}`;
       // create species detail
       const speciesElement = document.createElement("p");
       speciesElement.textContent = `Species: ${character.species}`;
-      //create status detail
+      // create status detail
       const statusElement = document.createElement("p");
       statusElement.textContent = `Status: ${character.status}`;
 
