@@ -1,3 +1,11 @@
+.vsc-initialized{
+  background-color: black;
+}
+.h1{
+  background-color: #8fc8d4;
+  border-radius:30px;
+}
+
 .container {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
@@ -11,7 +19,7 @@
 
 .hide {
   display: none;
-
+}
 
 
 .container{
@@ -42,9 +50,3 @@ border-radius:30px;
 aspect-ratio:auto;
 
   }
-  
-  }
-.image__image{
-
-
-}
