@@ -3,8 +3,14 @@ const url = "https://rickandmortyapi.com/api/character/";
 
 const cardsContainer = document.getElementById("card-container");
 
+
 cardsContainer.className = "container";
 // addEventListener(`mouseenter`, addMouseHover)
+
+
+cardsContainer.className = 'container'
+
+
 
 const handleDropDown = (event, container) => {
   event.preventDefault();
@@ -22,6 +28,10 @@ fetch(url)
   .then((data) => {
     const characterList = data.results;
     characterList.forEach((character) => {
+
+
+      // console.log(character);
+
       const card = document.createElement("article");
       card.className = "container";
       // create and populate name element
@@ -45,6 +55,27 @@ fetch(url)
       // create place of origin element
       const originElement = document.createElement("p");
       originElement.textContent = `Place of origin: ${character.origin.name}`;
+
+
+    imageElement.setAttribute('class', 'image-class')
+    //
+imageElement.addEventListener(`mouseenter`, () => { console.log(`mouse enter`)});
+imageElement.addEventListener(`mouseleave`, () => {console.log(`mouse leave`)})
+
+
+      imageElement.addEventListener(`mouseenter`, (e) => {
+        
+        imageElement.style.border = `12px ridge limegreen`
+        console.log(`mouse enter`)
+      });
+      imageElement.addEventListener(`mouseleave`, () => {
+        imageElement.style.border = `none`
+      })
+
+
+      card.className = 'container'
+
+
       // create species detail
       const speciesElement = document.createElement("p");
       speciesElement.textContent = `Species: ${character.species}`;
@@ -65,9 +96,11 @@ fetch(url)
     });
   });
 
+
 // function addMouseHover(e){
 //   e.preventDefault()
 // e.target.imageElement
 // console.log(`mouseender`, e.target.imageElement)
 
 // }
+
