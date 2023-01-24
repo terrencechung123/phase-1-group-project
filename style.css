@@ -1,9 +1,19 @@
-.vsc-initialized{
+.vsc-initialized {
   background-color: black;
 }
-.h1{
+h1 {
+  text-align: center;
   background-color: #8fc8d4;
-  border-radius:30px;
+  border: 3px solid greenyellow;
+  border-radius: 30px;
+}
+
+body {
+  background-color: black;
+}
+
+.hide {
+  display: none;
 }
 
 .container {
@@ -15,38 +25,21 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-}
-
-.hide {
-  display: none;
-}
-
-
-.container{
-    
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-    padding: 16px;
-    text-align: center;
-    background-color: #8fc8d4;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-
+  border: 3px solid greenyellow;
   border-radius: 30px;
+}
 
-  
-  }
+.image-class {
+  border-radius: 30px;
+  aspect-ratio: auto;
+  display: block;
+  margin: 0 auto;
+}
 
+button {
+  margin: 5px;
+}
 
-  .container.container{
-    display:table;
-  }
-
-
-  .image-class{
-    
-border-radius:30px;
-aspect-ratio:auto;
-
-  }
+article {
+  margin-bottom: 8px;
+}
