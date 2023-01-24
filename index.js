@@ -1,16 +1,6 @@
 const url = "https://rickandmortyapi.com/api/character/";
-// a comment
 
 const cardsContainer = document.getElementById("card-container");
-
-
-cardsContainer.className = "container";
-// addEventListener(`mouseenter`, addMouseHover)
-
-
-cardsContainer.className = 'container'
-
-
 
 const handleDropDown = (event, container) => {
   event.preventDefault();
@@ -28,10 +18,6 @@ fetch(url)
   .then((data) => {
     const characterList = data.results;
     characterList.forEach((character) => {
-
-
-      // console.log(character);
-
       const card = document.createElement("article");
       card.className = "container";
       // create and populate name element
@@ -45,6 +31,15 @@ fetch(url)
       // detailsContainer is the div for the drop down content
       const detailsContainer = document.createElement("div");
       detailsContainer.className = "hide";
+      // create place of origin element
+      const originElement = document.createElement("p");
+      originElement.textContent = `Place of origin: ${character.origin.name}`;
+      // create species detail
+      const speciesElement = document.createElement("p");
+      speciesElement.textContent = `Species: ${character.species}`;
+      // create status detail
+      const statusElement = document.createElement("p");
+      statusElement.textContent = `Status: ${character.status}`;
       // creating the drop down button and listening for its "click"
       const dropDownButton = document.createElement("button");
       dropDownButton.textContent = "See Details";
@@ -52,43 +47,18 @@ fetch(url)
         handleDropDown(event, detailsContainer);
       });
 
-      // create place of origin element
-      const originElement = document.createElement("p");
-      originElement.textContent = `Place of origin: ${character.origin.name}`;
-
-
-    imageElement.setAttribute('class', 'image-class')
-    //
-imageElement.addEventListener(`mouseenter`, () => { console.log(`mouse enter`)});
-imageElement.addEventListener(`mouseleave`, () => {console.log(`mouse leave`)})
-
-
+      imageElement.setAttribute("class", "image-class");
+      // addEventListener(`mouseenter`, addMouseHover)
       imageElement.addEventListener(`mouseenter`, (e) => {
-        
-        imageElement.style.border = `12px ridge limegreen`
-        console.log(`mouse enter`)
+        imageElement.style.border = `12px ridge limegreen`;
       });
+
       imageElement.addEventListener(`mouseleave`, () => {
-        imageElement.style.border = `none`
-      })
-
-
-      card.className = 'container'
-
-
-      // create species detail
-      const speciesElement = document.createElement("p");
-      speciesElement.textContent = `Species: ${character.species}`;
-      // create status detail
-      const statusElement = document.createElement("p");
-      statusElement.textContent = `Status: ${character.status}`;
-
-      imageElement.addEventListener(`mouseenter`, () => {
-        console.log(`mouse enter`);
+        imageElement.style.border = `none`;
       });
-      imageElement.addEventListener(`mouseleave`, () => {
-        console.log(`mouse leave`);
-      });
+
+      imageElement.addEventListener(`mouseenter`, () => {});
+      imageElement.addEventListener(`mouseleave`, () => {});
 
       cardsContainer.append(card);
       card.append(nameElement, imageElement, dropDownButton, detailsContainer);
@@ -96,11 +66,9 @@ imageElement.addEventListener(`mouseleave`, () => {console.log(`mouse leave`)})
     });
   });
 
-
 // function addMouseHover(e){
 //   e.preventDefault()
 // e.target.imageElement
 // console.log(`mouseender`, e.target.imageElement)
 
 // }
-
