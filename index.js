@@ -26,11 +26,12 @@ function ricknmorty(data) {
   // Get a HTML collection of all article elements.
 
   const articleElements = document.getElementsByTagName("article");
+
   //Turn the HTML collection into a proper array so we can iterate through it.
   Array.from(articleElements).forEach((element, index) => {
-    // console.log(element, index, data.results[index]);
+    console.log(element, index, data.results);
     // Use our current index within the array to set the inner text to our data.results index. Because our data comes back in the same order as our HTML.
-    element.innerText = data.results[index].origin.name;
+    element.innerText = `Place of origin: ${data.results[index].origin.name}`;
   });
 
   //el("rick-article").innerText = data.results[0].origin.name;
