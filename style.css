@@ -2,6 +2,8 @@
   background-color: black;
 }
 h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 900;
   text-align: center;
   background-color: #8fc8d4;
   border: 3px solid greenyellow;
@@ -14,6 +16,11 @@ body {
 
 .hide {
   display: none;
+}
+
+.show {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
 }
 
 .container {
@@ -29,15 +36,30 @@ body {
   border-radius: 30px;
 }
 
+.charName {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+}
+
 .image-class {
   border-radius: 30px;
   aspect-ratio: auto;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
 }
 
 button {
-  margin: 5px;
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  margin-top: 15px;
+  padding: 5px;
+  color: rgb(59, 91, 11);
+  background-color: greenyellow;
+  border-radius: 5px;
+  border: 2px solid rgb(59, 91, 11);
 }
 
 article {

@@ -23,6 +23,7 @@ fetch(url)
       // create and populate name element
       const nameElement = document.createElement("p");
       nameElement.textContent = character.name;
+      nameElement.className = "charName";
       // create and populate image element
       const imageElement = document.createElement("img");
       imageElement.src = character.image;
