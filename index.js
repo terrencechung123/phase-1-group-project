@@ -18,7 +18,7 @@ fetch(url)
   .then((data) => {
     const characterLisp = data.results;
     const characterList = characterLisp.slice(0,5);
-   console.log(';aksjrdgvnhsadklrg',data.results)
+   console.log(';aksjrdgvnhsadklrg',characterList)
     characterList.forEach((character) => {
       
       // console.log(character);
