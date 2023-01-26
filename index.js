@@ -16,8 +16,12 @@ cardsContainer.className = "container";
 fetch(url)
   .then((resp) => resp.json())
   .then((data) => {
-    const characterList = data.results;
+    const characterLisp = data.results;
+    const characterList = characterLisp.slice(0,5);
+   console.log(';aksjrdgvnhsadklrg',data.results)
     characterList.forEach((character) => {
+      
+      // console.log(character);
       const card = document.createElement("article");
       card.className = "container";
       // create and populate name element
@@ -72,4 +76,3 @@ fetch(url)
 // e.target.imageElement
 // console.log(`mouseender`, e.target.imageElement)
 
-// }
