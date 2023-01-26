@@ -5,8 +5,9 @@ titleAlert[0].addEventListener("click", (banana) => window.alert("banana!"));
 
 fetch(url)
 .then((resp) => resp.json())
-.then((character) => {
-  character.results.forEach(renderApiData)
+.then((data) => {
+  const character = data.results.splice(0,5);
+  character.forEach(renderApiData)
 });
 
 function renderApiData(character){
