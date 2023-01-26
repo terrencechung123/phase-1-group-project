@@ -1,3 +1,5 @@
+//why does picture pop out when hovered?
+
 const url = "https://rickandmortyapi.com/api/character/";
 const cardsContainer = document.getElementById("card-container");
 const titleAlert = document.getElementsByTagName("h1");
