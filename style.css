@@ -78,7 +78,9 @@ article {
   width: 70%;
   margin: auto;
 }
-
+h4{
+  color:white
+}
 label {
   color: white;
   margin-bottom: 5px;
