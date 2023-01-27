@@ -3,7 +3,7 @@
 const url = "https://rickandmortyapi.com/api/character/";
 const cardsContainer = document.getElementById("card-container");
 const titleAlert = document.getElementsByTagName("h1");
-titleAlert[0].addEventListener("click", (banana) => window.alert("banana!"));
+titleAlert[0].addEventListener("click", (banana) => window.alert("🍌🍌🍌BANANAS MORTY! BANANAS!🍌🍌🍌"));
 const form = document.createElement('form')
 //create a like button in html
 //put it inside each character card
@@ -88,5 +88,3 @@ function renderApiData(character){
   //1.Create like button at the bottom right corner of each character card.X
   //2.Have number of likes display next to heart and have it increment by 1 for each click.
   //3.let each picture have its own unique likeCount
-
-  //article class "container"
