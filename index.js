@@ -16,7 +16,7 @@ const form = document.getElementById('createNewCharacterCard');
 //     speciesElement: e.target.species.value,
 //     statusElement: e.target.status.value,
 //   };
-//   newCharacterObj.forEach(Ass);
+//   newCharacterObj.forEach(charObj);
 //     }
 // );
 
