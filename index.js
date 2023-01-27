@@ -71,7 +71,7 @@ function renderCharacterApi(character){
   
     //addEventHandlers() Here
     imageElement.addEventListener(`mouseenter`, () => {
-      imageElement.style.border = `12px ridge limegreen`;
+      imageElement.style.border = `12px #EAF157`;
     });
     imageElement.addEventListener(`mouseleave`, () => {
       imageElement.style.border = `none`;
