@@ -16,7 +16,7 @@ const form = document.getElementById('createNewCharacterCard');
 //     speciesElement: e.target.species.value,
 //     statusElement: e.target.status.value,
 //   };
-//   newCharacterObj.forEach(Ass);
+//   newCharacterObj.forEach(charObj);
 //     }
 // );
 
@@ -71,7 +71,7 @@ function renderCharacterApi(character){
   
     //addEventHandlers() Here
     imageElement.addEventListener(`mouseenter`, () => {
-      imageElement.style.border = `12px ridge limegreen`;
+      imageElement.style.border = `12px #EAF157`;
     });
     imageElement.addEventListener(`mouseleave`, () => {
       imageElement.style.border = `none`;
@@ -151,3 +151,4 @@ function renderCharacterApi(character){
 //1.Create like button at the bottom right corner of each character card.X
 //2.Have number of likes display next to heart and have it increment by 1 for each click.
 //3.let each picture have its own unique likeCount
+document.querySelector("#textPreview")
