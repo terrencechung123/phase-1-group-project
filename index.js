@@ -3,22 +3,9 @@ const url = "https://rickandmortyapi.com/api/character/";
 const secretTitleAlert = document.getElementsByTagName("h1");
   secretTitleAlert[0].addEventListener("click", (banana) => window.alert("🍌🍌🍌BANANAS MORTY! BANANAS!🍌🍌🍌"));
 const handleDropDown = (event, container) => { 
-  event.preventDefault();
-  container.className = container.className === "hide" ? "show" : "hide";
+  event.preventDefault(),container.className = container.className === "hide" ? "show" : "hide";
 };
 const form = document.getElementById('createNewCharacterCard');
-// form.addEventListener('submit',(e)=>{
-//   e.preventDefault();
-//   const newCharacterObj = {
-//     name: e.target.name.value,
-//     placeOfOrigin: e.target.name.value,
-//     image: e.target.image.value,
-//     speciesElement: e.target.species.value,
-//     statusElement: e.target.status.value,
-//   };
-//   newCharacterObj.forEach(charObj);
-//     }
-// );
 
 
 fetch(url)
@@ -78,7 +65,7 @@ function renderCharacterApi(character){
     });
     likeButton.addEventListener('click', (e)=>{
       likes += 1;
-      likeCount.textContent = `${likes} likes`;
+      likeCount.textContent = `${likes} bananas`;
     });
     likeButton.addEventListener('mouseenter',(e)=>{
       likeButton.style.backgroundColor = 'pink';
@@ -115,8 +102,6 @@ function renderCharacterApi(character){
     status: e.target.status.value,
   };
   renderCharacterApi(newCharacter);
-    // originElement.textContent = '';
-    // originElement.textContent = `Place of origin: ${character.origin}`;
     e.target.reset()
   });
 
@@ -129,23 +114,7 @@ function renderCharacterApi(character){
   
   
   
-  //   console.log('newCharacterObj', newCharacterObj);
-    //   renderCharacterApi(newCharacterObj);
-    // });
-  // });
-//   function createNewCharacter(CharacterObj){
-//       console.log('new',CharacterObj);
-//       const newCharacterObj = {
-//         name: CharacterObj.name.value,
-//         placeOfOrigin: CharacterObj.placeOfOrigin.value,
-//         image: CharacterObj.image.value,
-//         species: CharacterObj.species.value,
-//         status: CharacterObj.status.value,
-//       };
-//       console.log(image);
-//   }
-// renderCharacterApi(CharacterObj);
-  
+
 //Shortcut Functions Here
 //BONUS GOAL:
 //1.Create like button at the bottom right corner of each character card.X
