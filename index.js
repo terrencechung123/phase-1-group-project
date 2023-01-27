@@ -76,7 +76,7 @@ function renderApiData(character) {
   );
   detailsContainer.append(originElement, speciesElement, statusElement);
 }
-//BONUS GOAL:
-//1.Create like button at the bottom right corner of each character card.X
-//2.Have number of likes display next to heart and have it increment by 1 for each click.
-//3.let each picture have its own unique likeCount
+// BONUS GOAL:
+// 1.Create like button at the bottom right corner of each character card.X
+// 2.Have number of likes display next to heart and have it increment by 1 for each click.
+// 3.let each picture have its own unique likeCount
