@@ -59,7 +59,6 @@ function renderCharacterApi(character){
     dropDownButton.textContent = "See Details";
   const cardsContainer = document.getElementById("card-container");
     cardsContainer.className = "container";
-
   //"Likes" Information Here
   const likeSection = createEl('div');
   const likeCount = createEl('span');
@@ -108,21 +107,14 @@ function renderCharacterApi(character){
   
   form.addEventListener('submit',(e)=>{
     e.preventDefault();
-    console.log('e',e.target.placeOfOrigin.value);
-    const character = {
+    let newCharacter = {
     name: e.target.name.value,
     image: e.target.image.value,
+    origin: {name : e.target.placeOfOrigin.value},
     species: e.target.species.value,
     status: e.target.status.value,
-    }
-    const shit = e.target.placeOfOrigin.value;
-    console.log('ACTUAL SHIT', shit);
-    console.log('character',character);
-    // character.origin.name = e.target.placeOfOrigin.value 
-    console.log('WOAH', e.target.placeOfOrigin.value);
-    console.log(character);
-    console.log(character);
-    renderCharacterApi(character);
+  };
+  renderCharacterApi(newCharacter);
     // originElement.textContent = '';
     // originElement.textContent = `Place of origin: ${character.origin}`;
   });
