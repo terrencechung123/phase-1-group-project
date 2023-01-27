@@ -6,7 +6,7 @@ const handleDropDown = (event, container) => {
   event.preventDefault();
   container.className = container.className === "hide" ? "show" : "hide";
 };
-// const form = document.getElementById('createNewCharacterCard');
+const form = document.getElementById('createNewCharacterCard');
 // form.addEventListener('submit',(e)=>{
 //   e.preventDefault();
 //   const newCharacterObj = {
@@ -29,8 +29,13 @@ fetch(url)
   });
   
 
+
+
+
 function renderCharacterApi(character){
+  console.log(character);
   //Creating Elements and Modifications Here
+  
   const card = createEl("article");
     card.className = "container";
   const imageElement = createEl("img");
@@ -91,27 +96,50 @@ function renderCharacterApi(character){
     dropDownButton.addEventListener('mouseleave',(e)=>{
       dropDownButton.style.backgroundColor = 'greenyellow';
     });
-  
+    
+    
     
     //Append() Here
     cardsContainer.append(card);
     card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeSection,);
     detailsContainer.append(originElement, speciesElement, statusElement);
     likeSection.append(likeCount, likeButton);
+  }
+  
+  form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    console.log('e',e.target.placeOfOrigin.value);
+    const character = {
+    name: e.target.name.value,
+    image: e.target.image.value,
+    species: e.target.species.value,
+    status: e.target.status.value,
+    }
+    const shit = e.target.placeOfOrigin.value;
+    console.log('ACTUAL SHIT', shit);
+    console.log('character',character);
+    // character.origin.name = e.target.placeOfOrigin.value 
+    console.log('WOAH', e.target.placeOfOrigin.value);
+    console.log(character);
+    console.log(character);
+    renderCharacterApi(character);
+    // originElement.textContent = '';
+    // originElement.textContent = `Place of origin: ${character.origin}`;
+  });
 
-    // form.addEventListener('submit',(e)=>{
-    //   e.preventDefault();
-    //   const newCharacterObj = {
-    //     name: e.target.name.value,
-    //     placeOfOrigin: e.target.placeOfOrigin.value,
-    //     image: e.target.image.value,
-    //     species: e.target.species.value,
-    //     status: e.target.status.value,
-    //   };
-    //   console.log('newCharacterObj', newCharacterObj);
+
+  function createEl(id){
+    return document.createElement(id);
+  }
+  
+  
+  
+  
+  
+  //   console.log('newCharacterObj', newCharacterObj);
     //   renderCharacterApi(newCharacterObj);
     // });
-  }
+  // });
 //   function createNewCharacter(CharacterObj){
 //       console.log('new',CharacterObj);
 //       const newCharacterObj = {
@@ -126,9 +154,6 @@ function renderCharacterApi(character){
 // renderCharacterApi(CharacterObj);
   
 //Shortcut Functions Here
-function createEl(id){
-  return document.createElement(id);
-}
 //BONUS GOAL:
 //1.Create like button at the bottom right corner of each character card.X
 //2.Have number of likes display next to heart and have it increment by 1 for each click.
