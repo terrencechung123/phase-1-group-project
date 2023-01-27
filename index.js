@@ -5,6 +5,8 @@ const cardsContainer = document.getElementById("card-container");
 const titleAlert = document.getElementsByTagName("h1");
 titleAlert[0].addEventListener("click", (banana) => window.alert("banana!"));
 const form = document.createElement('form')
+let likeNumber;
+let likeCount =0; 
 //create a like button in html
 //put it inside each character card
 //have it increment + 1 every time it is clicked
@@ -30,8 +32,7 @@ function renderApiData(character){
   /////////////////////////cureentlyWOrking On Dis
   //  //<button id="like-button" class="like-button">♥</button>
   const likeButton=document.createElement('button');
-  likeButton.textContent = "♥";
-
+  likeButton.textContent = "♥ likes 0"
 ///////////////////////////
   const handleDropDown = (event, container) => { event.preventDefault(), container.className = container.className === "hide" ? "show" : "hide";};
   dropDownButton.addEventListener('click', (event) => { handleDropDown(event, detailsContainer);})
@@ -58,6 +59,12 @@ function renderApiData(character){
     imageElement.addEventListener(`mouseleave`, () => {
       imageElement.style.border = `none`;
     });
+    likeButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      const likeNumber = parseInt(likeCount.textContent);
+      likeCount.textContent = likeNumber + 1;
+      console.log('WHAT AMI',likeCount);
+    });
 
 
     card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeButton);
@@ -75,3 +82,6 @@ function renderApiData(character){
   //3.let each picture have its own unique likeCount
 
   //article class "container"
+
+  //addEventListener to likeButton and then have it display on the 
+  //bottom right corner of the character card.
