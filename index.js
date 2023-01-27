@@ -4,6 +4,15 @@ const url = "https://rickandmortyapi.com/api/character/";
 const cardsContainer = document.getElementById("card-container");
 const titleAlert = document.getElementsByTagName("h1");
 titleAlert[0].addEventListener("click", (banana) => window.alert("banana!"));
+const form = document.createElement('form')
+let likeNumber;
+// let likeCount =0; 
+// let currentLikes = '0'
+//create a like button in html
+//put it inside each character card
+//have it increment + 1 every time it is clicked
+
+
 
 fetch(url)
 .then((resp) => resp.json())
@@ -21,6 +30,13 @@ function renderApiData(character){
   const speciesElement = document.createElement("p");
   const statusElement = document.createElement("p");
   const dropDownButton = document.createElement("button");
+  const count = document.createElement('span')
+  /////////////////////////cureentlyWOrking On Dis
+  //  //<button id="like-button" class="like-button">♥</button>
+  const likeButton=document.createElement('button');
+  likeButton.textContent = "♥ likes";
+  count.textContent = '0'
+///////////////////////////
   const handleDropDown = (event, container) => { event.preventDefault(), container.className = container.className === "hide" ? "show" : "hide";};
   dropDownButton.addEventListener('click', (event) => { handleDropDown(event, detailsContainer);})
     imageElement.setAttribute("class", "image-class");
@@ -37,6 +53,7 @@ function renderApiData(character){
     dropDownButton.textContent = "See Details";
     cardsContainer.className = "container";
     cardsContainer.append(card);
+    
 
     //Event handlers
     imageElement.addEventListener(`mouseenter`, () => {
@@ -45,7 +62,39 @@ function renderApiData(character){
     imageElement.addEventListener(`mouseleave`, () => {
       imageElement.style.border = `none`;
     });
-    card.append(nameElement, imageElement, dropDownButton, detailsContainer);
+    
+    
+    
+    
+    likeButton.addEventListener("click", (event) => {
+      event.preventDefault();
+     const newLikes = parseInt(count.textContent) + 1
+     count.textContent = newLikes;
+    
+    });
+
+
+    
+    
+    
+    
+    
+    
+    card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeButton, count);
     detailsContainer.append(originElement, speciesElement, statusElement);
   };
 
+
+
+//////THIS IS THE LIKE BUTTON IN JS////////////////////////
+//////THIS IS THE LIKE BUTTON IN JS////////////////////////
+
+  //BONUS GOAL:
+  //1.Create like button at the bottom right corner of each character card.X
+  //2.Have number of likes display next to heart and have it increment by 1 for each click.
+  //3.let each picture have its own unique likeCount
+
+  //article class "container"
+
+  //addEventListener to likeButton and then have it display on the 
+  //bottom right corner of the character card
