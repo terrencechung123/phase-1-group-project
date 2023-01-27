@@ -1,7 +1,7 @@
 //Global Scope
 const url = "https://rickandmortyapi.com/api/character/";
 const secretTitleAlert = document.getElementsByTagName("h1");
-const cardsContainer = document.getElementById("card-container");
+  secretTitleAlert[0].addEventListener("click", (banana) => window.alert("🍌🍌🍌BANANAS MORTY! BANANAS!🍌🍌🍌"));
 const handleDropDown = (event, container) => { 
   event.preventDefault();
   container.className = container.className === "hide" ? "show" : "hide";
@@ -16,41 +16,40 @@ fetch(url)
   
 function renderCharacterApi(character){
   //Creating Elements and Modifications Here
-  const likeSection = createEl('div');
-  const likeCount = createEl('span');
-  const likeButton=createEl('button');
   const card = createEl("article");
+    card.className = "container";
   const imageElement = createEl("img");
+    imageElement.setAttribute("class", "image-class");
+    imageElement.src = character.image;
+    imageElement.alt = `Picture of ${character.name}`;
+    imageElement.id = "imageId";
   const nameElement = createEl("p");
+    nameElement.className = "charName";
+    nameElement.textContent = character.name;
   const detailsContainer = createEl("div");
+    detailsContainer.className = "hide";
   const originElement = createEl("p");
+    originElement.textContent = `Place of origin: ${character.origin.name}`;
   const speciesElement = createEl("p");
+    speciesElement.textContent = `Species: ${character.species}`;
   const statusElement = createEl("p");
+    statusElement.textContent = `Status: ${character.status}`;
   const dropDownButton = createEl("button");
+    dropDownButton.textContent = "See Details";
+  const cardsContainer = document.getElementById("card-container");
+    cardsContainer.className = "container";
 
   //Likes Information Here
-  let likes = 0;
-  likeCount.textContent = "0 likes";
-  likeButton.textContent = "♥";
+  const likeSection = createEl('div');
+  const likeCount = createEl('span');
+    likeCount.textContent = "0 likes";
+    likeCount.id = "like-count";
+  const likeButton=createEl('button');
+    likeButton.textContent = "♥";
   likeSection.append(likeCount, likeButton);
-  imageElement.setAttribute("class", "image-class");
+  let likes = 0;
 
-  //Character Card Information Here
-  card.className = "container";
-  detailsContainer.className = "hide";
-  nameElement.className = "charName";
-  nameElement.textContent = character.name;
-  imageElement.src = character.image;
-  imageElement.alt = `Picture of ${character.name}`;
-  imageElement.id = "imageId";
-  originElement.textContent = `Place of origin: ${character.origin.name}`;
-  speciesElement.textContent = `Species: ${character.species}`;
-  statusElement.textContent = `Status: ${character.status}`;
-  dropDownButton.textContent = "See Details";
-  cardsContainer.className = "container";
-  cardsContainer.append(card);
-
-  //Event Handlers Here
+  //addEventHandlers Here
   imageElement.addEventListener(`mouseenter`, () => {
     imageElement.style.border = `12px ridge limegreen`;
   });
@@ -64,9 +63,9 @@ function renderCharacterApi(character){
   dropDownButton.addEventListener('click', (event)=>{
     handleDropDown(event, detailsContainer);
   });
-  secretTitleAlert[0].addEventListener("click", (banana) => window.alert("🍌🍌🍌BANANAS MORTY! BANANAS!🍌🍌🍌", letsGetSchwifty));
   
   //Append Here
+  cardsContainer.append(card);
   card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeSection,);
   detailsContainer.append(originElement, speciesElement, statusElement);
 };
