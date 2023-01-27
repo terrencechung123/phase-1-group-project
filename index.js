@@ -39,39 +39,38 @@ function renderCharacterApi(character){
   const cardsContainer = document.getElementById("card-container");
     cardsContainer.className = "container";
 
-  //Likes Information Here
+  //"Likes" Information Here
   const likeSection = createEl('div');
   const likeCount = createEl('span');
     likeCount.textContent = "0 likes";
     likeCount.id = "like-count";
   const likeButton=createEl('button');
     likeButton.textContent = "♥";
-  likeSection.append(likeCount, likeButton);
-  let likes = 0;
-
-  //addEventHandlers Here
-  imageElement.addEventListener(`mouseenter`, () => {
-    imageElement.style.border = `12px ridge limegreen`;
-  });
-  imageElement.addEventListener(`mouseleave`, () => {
-    imageElement.style.border = `none`;
-  });
-  likeButton.addEventListener('click', (e)=>{
-    likes += 1;
-    likeCount.textContent = `${likes} likes`;
-  });
-  dropDownButton.addEventListener('click', (event)=>{
-    handleDropDown(event, detailsContainer);
-  });
-  
-  //Append Here
-  cardsContainer.append(card);
-  card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeSection,);
-  detailsContainer.append(originElement, speciesElement, statusElement);
-};
+    let likes = 0;
+    
+    //addEventHandlers() Here
+    imageElement.addEventListener(`mouseenter`, () => {
+      imageElement.style.border = `12px ridge limegreen`;
+    });
+    imageElement.addEventListener(`mouseleave`, () => {
+      imageElement.style.border = `none`;
+    });
+    likeButton.addEventListener('click', (e)=>{
+      likes += 1;
+      likeCount.textContent = `${likes} likes`;
+    });
+    dropDownButton.addEventListener('click', (event)=>{
+      handleDropDown(event, detailsContainer);
+    });
+    
+    //Append() Here
+    cardsContainer.append(card);
+    card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeSection,);
+    detailsContainer.append(originElement, speciesElement, statusElement);
+    likeSection.append(likeCount, likeButton);
+  };
   
 //Shortcut Functions Here
-
 function createEl(id){
   return document.createElement(id);
 }
