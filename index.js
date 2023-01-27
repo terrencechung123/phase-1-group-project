@@ -62,10 +62,10 @@ function renderCharacterApi(character){
   //"Likes" Information Here
   const likeSection = createEl('div');
   const likeCount = createEl('span');
-    likeCount.textContent = "0 likes";
+    likeCount.textContent = "0 bananas";
     likeCount.id = "like-count";
   const likeButton=createEl('button');
-    likeButton.textContent = "♥";
+    likeButton.textContent = "🍌";
     let likes = 0;
     
   
@@ -84,7 +84,7 @@ function renderCharacterApi(character){
       likeButton.style.backgroundColor = 'pink';
     });
     likeButton.addEventListener('mouseleave',(e)=>{
-      likeButton.style.backgroundColor = 'greenyellow';
+      likeButton.style.backgroundColor = '#EAF157';
     });
     dropDownButton.addEventListener('click', (event)=>{
       handleDropDown(event, detailsContainer);
@@ -93,7 +93,7 @@ function renderCharacterApi(character){
       dropDownButton.style.backgroundColor = 'pink';
     });
     dropDownButton.addEventListener('mouseleave',(e)=>{
-      dropDownButton.style.backgroundColor = 'greenyellow';
+      dropDownButton.style.backgroundColor = '#EAF157';
     });
     
     
