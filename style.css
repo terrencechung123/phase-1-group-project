@@ -1,17 +1,93 @@
+ @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+.title {
+  position: absolute;
+  bottom: 0.8em;
+  width: 100%;
+  text-align: center;
+  font-family: 'Creepster';
+  font-size: 10em;
+  color: #b2daed;
+  z-index: 50;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.5);
+  
+  span {
+    font-size: 0.5em;
+  }
+}
+
+.title.middle {
+  -webkit-text-stroke: 0.1em #FFF765;
+  z-index: 49;
+}
+
+.title.bottom {
+  -webkit-text-stroke: 0.4em black;
+  z-index: 48;
+}
+
+.portal {
+  background-color: #66BA4F;  
+  box-shadow: 0px 0px 40px 10px #448C3F;
+  height: 60em;
+  width: 60em;
+  border-radius: 50%;
+  margin: auto;
+  background: 
+    radial-gradient(circle at 77% 80%, #FDFEB4 2.5%, transparent 2.5%),
+    radial-gradient(circle at 75% 83%, #FDFEB4 2%, transparent 2%),
+    radial-gradient(circle at 79% 83%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 45% 13%, #FFFFD5 1.5%, transparent 1.5%),
+    radial-gradient(circle at 42% 13%, #FFFFD5 2%, transparent 2%),
+    radial-gradient(circle at 38% 14%, #FFFFD5 1.5%, transparent 1.5%),
+    radial-gradient(circle at 20% 24%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 21% 23%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 51% 13%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 81% 33%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 85% 36%, #FDFEB4 2%, transparent 2%),
+    radial-gradient(circle at 21% 46%, #FDFEB4 1%, transparent 1%),
+    radial-gradient(circle at 20% 51%, #FDFEB4 2%, transparent 2%),
+    radial-gradient(circle at 53% 51%, transparent 64%, #43A93E 64%),
+    radial-gradient(circle at 47% 59%, transparent 64%, #43843E 64%),
+    radial-gradient(circle at 47% 60%, transparent 59%, #1A9042 59%),
+    radial-gradient(circle at 50% 59%, transparent 55%, #1B863C 55%),
+    radial-gradient(circle at 45% 60%, transparent 55%, #399C49 55%),
+    radial-gradient(circle at 47% 60%, transparent 46%, #1A9042 46%),
+    radial-gradient(circle at 46% 55%, transparent 43%, #75B03B 43%),
+    radial-gradient(circle at 36% 55%, transparent 43%, #A9CB48 43%),
+    radial-gradient(circle at 50% 60%, transparent 40%, #66BA4F 40%),
+    radial-gradient(circle at 50% 53%, transparent 40%, #E5E051 37%),
+    radial-gradient(circle at 30% 48%, transparent 40%, #EAF157 37%),
+    radial-gradient(circle at 57% 69%, transparent 40%, #EAF157 40%),
+    radial-gradient(circle at 40% 88%, transparent 40%, #E9E072 37%),
+    radial-gradient(circle at 67% 54%, transparent 40%, #FAEB7B 37%),
+    radial-gradient(circle at 49% 35%, transparent 40%, #FFF8C5 37%),
+    radial-gradient(circle at 79% 59%, transparent 40%, #FFFE9C 37%),
+    radial-gradient(circle at 50% 50%, #FDFEB4 100%, #FDFEB4 100%)
+    ;
+}
+
 .vsc-initialized {
   background-color: black;
 }
 h1 {
+  
   font-weight: 900;
   text-align: center;
-  background-color: #8fc8d4;
-  border: 3px solid greenyellow;
-  border-radius: 30px;
+  /* background-color: #b2daed;
+  border: 3px solid #66BA4F;
+  border-radius: 30px; */
 }
-
+h1 span { 
+  background-color: #b2daed;
+  border: 3px solid #66BA4F;
+  border-radius: 7px;
+}
 body {
   background-color: black;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Creepster", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+  text-shadow: #EAF157;
+  
 }
 
 .hide {
@@ -26,7 +102,7 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
   padding: 16px;
   text-align: center;
-  background-color: #8fc8d4;
+  background-color: #b2daed;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -42,7 +118,7 @@ body {
 
 .image-class {
   /* box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4); */
-  border: 12px solid #8fc8d4;
+  border: 12px solid #b2daed;
   border-radius: 30px;
   aspect-ratio: auto;
   max-width: calc(100% - 24px);
@@ -57,7 +133,7 @@ button {
   margin-top: 15px;
   padding: 5px;
   color: rgb(59, 91, 11);
-  background-color: greenyellow;
+  background-color: #66BA4F;
   border-radius: 5px;
   border: 2px solid rgb(59, 91, 11);
 }
@@ -90,5 +166,11 @@ input, textarea{
   margin-bottom: 10px;
 }
 
+img{
+  align-items: center;
+}
 
-
+.titleImage{
+  display: flex;
+  justify-content: center;
+}
