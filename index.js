@@ -1,56 +1,41 @@
-//why does picture pop out when hovered?
-
+//Global Scope
 const url = "https://rickandmortyapi.com/api/character/";
+const secretTitleAlert = document.getElementsByTagName("h1");
 const cardsContainer = document.getElementById("card-container");
-const titleAlert = document.getElementsByTagName("h1");
-titleAlert[0].addEventListener("click", (banana) => window.alert("🍌🍌🍌BANANAS MORTY! BANANAS!🍌🍌🍌"));
-const form = document.createElement('form')
-//create a like button in html
-//put it inside each character card
-//have it increment + 1 every time it is clicked
-
-
+const handleDropDown = (event, container) => { 
+  event.preventDefault();
+  container.className = container.className === "hide" ? "show" : "hide";
+};
 
 fetch(url)
-.then((resp) => resp.json())
-.then((data) => {
-  const character = data.results.splice(0,5)
-  character.forEach(renderApiData)
-});
+  .then((response) => response.json())
+  .then((data) => {
+    const character = data.results.splice(0,5);
+    character.forEach(renderCharacterApi);
+  });
+  
+function renderCharacterApi(character){
+  //Creating Elements and Modifications Here
+  const likeSection = createEl('div');
+  const likeCount = createEl('span');
+  const likeButton=createEl('button');
+  const card = createEl("article");
+  const imageElement = createEl("img");
+  const nameElement = createEl("p");
+  const detailsContainer = createEl("div");
+  const originElement = createEl("p");
+  const speciesElement = createEl("p");
+  const statusElement = createEl("p");
+  const dropDownButton = createEl("button");
 
-function renderApiData(character){
-  const card = document.createElement("article");
-  const imageElement = document.createElement("img");
-  const nameElement = document.createElement("p");
-  const detailsContainer = document.createElement("div");
-  const originElement = document.createElement("p");
-  const speciesElement = document.createElement("p");
-  const statusElement = document.createElement("p");
-  const dropDownButton = document.createElement("button");
-  /////////////////////////cureentlyWOrking On Dis
-  //  //<button id="like-button" class="like-button">♥</button>
-  const likeSection = document.createElement('div');
-  const likeCount = document.createElement('span');
-  const likeButton=document.createElement('button');
+  //Likes Information Here
+  let likes = 0;
   likeCount.textContent = "0 likes";
   likeButton.textContent = "♥";
   likeSection.append(likeCount, likeButton);
-  let likes = 0;
-  // console.log('likeSection',likeSection);
-  // .append(likeSection);
-  likeButton.addEventListener('click', (e)=>{
-    console.log('WOAH',e);
-    likes += 1;
-    likeCount.textContent = `${likes} likes`;
-  });
-  
-  // function renderLikes(){
-  // }
-  
-  ///////////////////////////
-  const handleDropDown = (event, container) => { event.preventDefault(), container.className = container.className === "hide" ? "show" : "hide";};
-  dropDownButton.addEventListener('click', (event) => { handleDropDown(event, detailsContainer);})
   imageElement.setAttribute("class", "image-class");
+
+  //Character Card Information Here
   card.className = "container";
   detailsContainer.className = "hide";
   nameElement.className = "charName";
@@ -64,27 +49,35 @@ function renderApiData(character){
   dropDownButton.textContent = "See Details";
   cardsContainer.className = "container";
   cardsContainer.append(card);
+
+  //Event Handlers Here
+  imageElement.addEventListener(`mouseenter`, () => {
+    imageElement.style.border = `12px ridge limegreen`;
+  });
+  imageElement.addEventListener(`mouseleave`, () => {
+    imageElement.style.border = `none`;
+  });
+  likeButton.addEventListener('click', (e)=>{
+    likes += 1;
+    likeCount.textContent = `${likes} likes`;
+  });
+  dropDownButton.addEventListener('click', (event)=>{
+    handleDropDown(event, detailsContainer);
+  });
+  secretTitleAlert[0].addEventListener("click", (banana) => window.alert("🍌🍌🍌BANANAS MORTY! BANANAS!🍌🍌🍌", letsGetSchwifty));
   
+  //Append Here
+  card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeSection,);
+  detailsContainer.append(originElement, speciesElement, statusElement);
+};
   
-    //Event handlers
-    imageElement.addEventListener(`mouseenter`, () => {
-      imageElement.style.border = `12px ridge limegreen`;
-    });
-    imageElement.addEventListener(`mouseleave`, () => {
-      imageElement.style.border = `none`;
-    });
+//Shortcut Functions Here
 
-
-    card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeSection);
-    detailsContainer.append(originElement, speciesElement, statusElement);
-  };
-
-
-
-//////THIS IS THE LIKE BUTTON IN JS////////////////////////
-//////THIS IS THE LIKE BUTTON IN JS////////////////////////
-
-  //BONUS GOAL:
-  //1.Create like button at the bottom right corner of each character card.X
-  //2.Have number of likes display next to heart and have it increment by 1 for each click.
-  //3.let each picture have its own unique likeCount
+function createEl(id){
+  return document.createElement(id);
+}
+  
+//BONUS GOAL:
+//1.Create like button at the bottom right corner of each character card.X
+//2.Have number of likes display next to heart and have it increment by 1 for each click.
+//3.let each picture have its own unique likeCount
