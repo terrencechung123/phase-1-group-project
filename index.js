@@ -29,28 +29,43 @@ function renderApiData(character){
   const dropDownButton = document.createElement("button");
   /////////////////////////cureentlyWOrking On Dis
   //  //<button id="like-button" class="like-button">♥</button>
+  const likeSection = document.createElement('div');
+  const likeCount = document.createElement('span');
   const likeButton=document.createElement('button');
+  likeCount.textContent = "0 likes";
   likeButton.textContent = "♥";
-
-///////////////////////////
+  likeSection.append(likeCount, likeButton);
+  let likes = 0;
+  // console.log('likeSection',likeSection);
+  // .append(likeSection);
+  likeButton.addEventListener('click', (e)=>{
+    console.log('WOAH',e);
+    likes += 1;
+    likeCount.textContent = `${likes} likes`;
+  });
+  
+  // function renderLikes(){
+  // }
+  
+  ///////////////////////////
   const handleDropDown = (event, container) => { event.preventDefault(), container.className = container.className === "hide" ? "show" : "hide";};
   dropDownButton.addEventListener('click', (event) => { handleDropDown(event, detailsContainer);})
-    imageElement.setAttribute("class", "image-class");
-    card.className = "container";
-    detailsContainer.className = "hide";
-    nameElement.className = "charName";
-    nameElement.textContent = character.name;
-    imageElement.src = character.image;
-    imageElement.alt = `Picture of ${character.name}`;
-    imageElement.id = "imageId";
-    originElement.textContent = `Place of origin: ${character.origin.name}`;
-    speciesElement.textContent = `Species: ${character.species}`;
-    statusElement.textContent = `Status: ${character.status}`;
-    dropDownButton.textContent = "See Details";
-    cardsContainer.className = "container";
-    cardsContainer.append(card);
-    
-
+  imageElement.setAttribute("class", "image-class");
+  card.className = "container";
+  detailsContainer.className = "hide";
+  nameElement.className = "charName";
+  nameElement.textContent = character.name;
+  imageElement.src = character.image;
+  imageElement.alt = `Picture of ${character.name}`;
+  imageElement.id = "imageId";
+  originElement.textContent = `Place of origin: ${character.origin.name}`;
+  speciesElement.textContent = `Species: ${character.species}`;
+  statusElement.textContent = `Status: ${character.status}`;
+  dropDownButton.textContent = "See Details";
+  cardsContainer.className = "container";
+  cardsContainer.append(card);
+  
+  
     //Event handlers
     imageElement.addEventListener(`mouseenter`, () => {
       imageElement.style.border = `12px ridge limegreen`;
@@ -60,7 +75,7 @@ function renderApiData(character){
     });
 
 
-    card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeButton);
+    card.append(nameElement, imageElement, dropDownButton, detailsContainer, likeSection);
     detailsContainer.append(originElement, speciesElement, statusElement);
   };
 
