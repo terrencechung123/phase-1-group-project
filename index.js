@@ -41,7 +41,7 @@ function renderCharacterApi(character){
   const imageElement = createEl("img");
     imageElement.setAttribute("class", "image-class");
     imageElement.src = character.image;
-    imageElement.alt = `Picture of ${character.name}`;
+  imageElement.title = `${character.name}`+'.image';
     imageElement.id = "imageId";
   const nameElement = createEl("p");
     nameElement.className = "charName";
@@ -117,6 +117,7 @@ function renderCharacterApi(character){
   renderCharacterApi(newCharacter);
     // originElement.textContent = '';
     // originElement.textContent = `Place of origin: ${character.origin}`;
+    e.target.reset()
   });
 
 
